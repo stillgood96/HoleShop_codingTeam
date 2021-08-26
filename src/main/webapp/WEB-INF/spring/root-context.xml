@@ -3,7 +3,8 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:util="http://www.springframework.org/schema/util"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+       xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring.xsd">
 
     <context:component-scan base-package="org.zerock"></context:component-scan>
 
@@ -32,6 +33,15 @@
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"></property>
     </bean>
+
+<!--
+        MyBatis mapper
+        scan을 통해서 지정된 패키지의 모든 MyBatis 관련 어노테이션을 찾아서 처리한다.
+        Mapper 설정작업은 각각의 XML이나 Mapper 인터페이스를 설정할 수 도 있지만,
+        매번 너무 번잡하기 때문에 예제는 자동으로 org.zerock.mapper 패키지를 인식하는 방식으로
+        작성하는 것이 가장 편리하다.
+-->
+    <mybatis-spring:scan base-package="org.zerock.mapper"/>
 
 
 </beans>
