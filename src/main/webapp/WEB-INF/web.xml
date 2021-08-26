@@ -3,6 +3,30 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
+<!--
+web.xml은 설정을 위한 설정 파일이다.
+
+WAS가 처음 구동될 때 web.xml을 읽어 웹 애플리케이션 설정을 구성한다.
+
+DispatcherServlet을 등록해주면서 스프링 설정 파일을 지정한다.
+
+DispatcherServlet은 초기화 과정에서 지정된 설정 파일을 이용해 스프링 컨테이너를 초기화시킨다.
+
+-->
+
+<!--
+            servlet-context :
+           웹 어플리케이션에서 클라이언트의 요청을 받기위해서 설정하는 context
+           요청과 관련된 객체를 정의하게 된다. ( url 관련 controller, ViewResolver)
+           이 context에 등록되는 Bean들은 servlet-container에만 사용되어진다
+
+            root-context :
+            servlet-context와는 반대로 view와 관련이 없는 객체에 대해 정의하게 된다.
+            service, repository , db 등 비즈니스 로직과 관련된 부분을 설정해준다.
+            이 context에 등록되는 Bean들은 모든 context에서 사용되어 진다.(공유가 가능하다)
+           .-->
+
+
     <servlet>
         <servlet-name>appServlet</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
@@ -13,6 +37,7 @@
         <load-on-startup>1</load-on-startup>
     </servlet>
 
+<!--    모든 요청을 dispatcher-servlet인 appServlet이 처리하도록 한다. -->
     <servlet-mapping>
         <servlet-name>appServlet</servlet-name>
         <url-pattern>/</url-pattern>
