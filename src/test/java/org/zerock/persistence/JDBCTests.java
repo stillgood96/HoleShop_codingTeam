@@ -9,6 +9,9 @@ import java.sql.SQLException;
 
 @Log4j
 public class JDBCTests {
+    // jdbc 테스트
+
+
 
     static {
         try {
