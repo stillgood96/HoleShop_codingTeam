@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.zerock.domain.SampleDTO;
+import org.zerock.domain.SampleDTOList;
 
 import java.util.ArrayList;
 
@@ -65,5 +66,15 @@ public class SampleController02 {
         return "ex02Array";
     }
 
+    // 133page
+    // 만일 전달하는 데이터가 SampleDTO와 같이 객체 타입이고 여러 개를 처리해야 한다면
+    // SampleDTO의 리스트를 포함하는 SampleDTOList 클래스를 설계해야한다.
+    // 파라미터는 [인덱스]와 같은 형식으로 전달해서 처리할 수 있다.
+    // ex) /ex02Bean?list[0].name=aaa&list[1].name=bbb
+    @GetMapping("/ex02Bean")
+    public String ex02Bean(SampleDTOList list) {
+        log.info("list dtos: " +list);
 
+        return "ex02Bean";
+    }
 }
