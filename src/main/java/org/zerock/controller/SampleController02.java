@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.zerock.domain.SampleDTO;
 
+import java.util.ArrayList;
+
 // 126 page
 @Controller
 @RequestMapping("/sample/*")
@@ -44,4 +46,24 @@ public class SampleController02 {
 
         return "ex02";
     }
+
+    // 리스트에 대한 처리
+    @GetMapping("/ex02List")
+    public String ex02List(@RequestParam("ids") ArrayList<String> ids) {
+
+        log.info("ids" + ids);
+
+        return "ex02List";
+    }
+
+    // 배열에 대한 처리
+    @GetMapping("/ex02List")
+    public String ex02Array(@RequestParam("ids") String [] ids) {
+
+        log.info("ids" + ids);
+
+        return "ex02Array";
+    }
+
+
 }
