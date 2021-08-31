@@ -11,7 +11,7 @@
     <!--    Root Context: defines shared resources visible to all other web components-->
     <bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
         <property name="driverClassName" value="org.mariadb.jdbc.Driver"></property>
-        <property name="jdbcUrl" value="jdbc:mariadb://wishket-aws.cw2h1nljbpsk.ap-northeast-2.rds.amazonaws.com:3306"></property>
+        <property name="jdbcUrl" value="jdbc:mariadb://wishket-aws.cw2h1nljbpsk.ap-northeast-2.rds.amazonaws.com:3306/wishket"></property>
         <property name="username" value="admin"></property>
         <property name="password" value="aa787574"></property>
     </bean>

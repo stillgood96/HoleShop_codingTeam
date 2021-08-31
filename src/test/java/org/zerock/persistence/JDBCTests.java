@@ -25,7 +25,7 @@ public class JDBCTests {
     public void testConnectionm() {
         try {
             Connection conn = DriverManager.getConnection(
-                    "jdbc:mariadb://wishket-aws.cw2h1nljbpsk.ap-northeast-2.rds.amazonaws.com:3306",
+                    "jdbc:mariadb://wishket-aws.cw2h1nljbpsk.ap-northeast-2.rds.amazonaws.com:3306/wishket",
                     "admin",
                     "aa787574"
             );
