@@ -15,6 +15,7 @@ DispatcherServlet은 초기화 과정에서 지정된 설정 파일을 이용해
 -->
 
 <!--
+
             servlet-context :
            웹 어플리케이션에서 클라이언트의 요청을 받기위해서 설정하는 context
            요청과 관련된 객체를 정의하게 된다. ( url 관련 controller, ViewResolver)
@@ -24,7 +25,8 @@ DispatcherServlet은 초기화 과정에서 지정된 설정 파일을 이용해
             servlet-context와는 반대로 view와 관련이 없는 객체에 대해 정의하게 된다.
             service, repository , db 등 비즈니스 로직과 관련된 부분을 설정해준다.
             이 context에 등록되는 Bean들은 모든 context에서 사용되어 진다.(공유가 가능하다)
-           .-->
+
+           -->
 
 
     <servlet>
